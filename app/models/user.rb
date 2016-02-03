@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 
     validates :password,
     presence: { message: "パスワードを入力して下さい。"},
-    confirmation: { message: "パスワードが一致しません。"}
+    length: {minimum: 8, too_short: "パスワードは８文字以上で入力してください。"}
 
-    validates :password_confirmation, presence: { message: "パスワードが一致しません。"}
+    validates :password_confirmation, presence: { message: "パスワード（確認）を入力してください"}
 end
