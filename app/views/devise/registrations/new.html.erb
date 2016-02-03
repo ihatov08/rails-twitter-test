@@ -24,15 +24,14 @@
       <div class="form-group">
         <%= f.label :password, "パスワード" %>
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-        <span class="text-danger"><%= @user.errors[:password][-1] %></span><br>
-        <span class="text-danger"><%= @user.errors[:password_confirmation][-1] %></span>
+        <span class="text-danger"><%= @user.errors.messages[:password][1] %></span><br>
+        <p><%= @user.errors.messages.inspect %></p><br>
+        <span class="text-danger"><%= @user.errors[:password] %></span>
         </div>
 
       <div class="form-group">
         <%= f.label :password_confirmation, "パスワード（確認）" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-        <span class="text-danger"><%= @user.errors[:password_confirmation][-1] %></span>
-        <span class="text-danger"><%= @user.errors.inspect %></span>
       </div>
 
 
